@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: yanqiw.qianyitian.com 
+      http:
+        paths:
+          - backend:
+              serviceName: nginx
+              servicePort: 80
+            path: /nginx
+          - backend:
+              serviceName: web 
+              servicePort: 80
+            path: /web
+          - backend:
+              serviceName: quickstart-kb-http
+              servicePort: 5601
+            path: /
