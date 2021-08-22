@@ -22,6 +22,10 @@ spec:
               servicePort: 8848
             path: /nacos/(.*)
           - backend:
+              serviceName: zhihu-spider
+              servicePort: 8080
+            path: /spider/(.*)
+          - backend:
               serviceName: quickstart-kb-http
               servicePort: 5601
             path: /(.*)
