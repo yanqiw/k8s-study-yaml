@@ -13,3 +13,10 @@ spec:
               serviceName: photo-gallery 
               servicePort: 8080
             path: /(.*)
+    - host: photo-gallery.yanqiw-next.qianyitian.com 
+      http:
+        paths:
+          - backend:
+              serviceName: photo-gallery 
+              servicePort: 8080
+            path: /(.*)

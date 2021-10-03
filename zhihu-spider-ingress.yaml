@@ -13,3 +13,10 @@ spec:
               serviceName: zhihu-spider
               servicePort: 8080
             path: /(.*)
+    - host: zhihu-spider.yanqiw-next.qianyitian.com 
+      http:
+        paths:
+          - backend:
+              serviceName: zhihu-spider
+              servicePort: 8080
+            path: /(.*)

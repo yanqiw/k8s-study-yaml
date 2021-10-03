@@ -13,3 +13,10 @@ spec:
               serviceName: nacos-headless
               servicePort: 8848
             path: /(.*)
+    - host: nacos.yanqiw-next.qianyitian.com 
+      http:
+        paths:
+          - backend:
+              serviceName: nacos-headless
+              servicePort: 8848
+            path: /(.*)
