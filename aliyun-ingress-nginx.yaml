@@ -188,7 +188,7 @@ metadata:
 spec:
   # Deployment need:
   # ----------------
-#  replicas: 1
+  #  replicas: 1
   # ----------------
   selector:
     matchLabels:
@@ -298,7 +298,8 @@ spec:
           path: /etc/localtime
           type: File
       nodeSelector:
-        boge/ingress-controller-ready: "true"
+        # need to add below label to node
+        ingress-controller-ready: "true"
       tolerations:
       - operator: Exists
 
