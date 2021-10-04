@@ -30,6 +30,10 @@ spec:
       labels:
         k8s-app: log-pilot2
     spec:
+            #      hostAliases:
+            #      - ip: "172.21.0.3"
+            #        hostnames:
+            #        - "i-g7h3d6qu"
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule

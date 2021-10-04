@@ -67,6 +67,10 @@ spec:
       labels:
         app: logstash
     spec:
+            #      hostAliases:
+            #      - ip: "172.21.0.3"
+            #        hostnames:
+            #        - "i-g7h3d6qu"
       containers:
       - name: logstash
         image: elastic/logstash:7.10.1
