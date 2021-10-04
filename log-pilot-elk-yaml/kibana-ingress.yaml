@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: kibana.yanqiw.qianyitian.com 
+      http:
+        paths:
+          - backend:
+              serviceName: quickstart-kb-http
+              servicePort: 5601
+            path: /(.*)
+    - host: kibana.yanqiw-next.qianyitian.com 
+      http:
+        paths:
+          - backend:
+              serviceName: quickstart-kb-http
+              servicePort: 5601
+            path: /(.*)

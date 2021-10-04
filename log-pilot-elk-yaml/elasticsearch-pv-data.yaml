@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elastic-search-data-pv
+  labels:
+    type: elastic-search-claim    # 这里建议打上一个独有的标签，方便在多个pv的时候方便提供pvc选择挂载
+spec:
+  capacity:
+    storage: 10Gi     
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: elastic-search-data-nfs
+  nfs:
+    path: /nfsroot/elastic-search/data
+    server: 172.21.0.4
