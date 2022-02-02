@@ -20,3 +20,10 @@ spec:
               serviceName: zhihu-spider
               servicePort: 8080
             path: /(.*)
+    - host: zhihu-spider.frankwang.cn
+      http:
+        paths:
+          - backend:
+              serviceName: zhihu-spider
+              servicePort: 8080
+            path: /(.*)
