@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment 
+apiVersion: v1
+kind: ReplicationController
 metadata:
   name: mysql
   labels:
@@ -7,8 +7,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      name: mysql
+    name: mysql
   template:
     metadata:
       labels:
@@ -35,8 +34,6 @@ spec:
       - name: mysql-data
         hostPath:
           path: /var/lib/mysql
-      nodeSelector:
-        "host-type": "mysql"  
 ---
 apiVersion: v1
 kind: Service
