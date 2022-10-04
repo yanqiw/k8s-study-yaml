@@ -1,0 +1,15 @@
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mysql-admin 
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: HostSNI(`*`) 
+      kind: Rule
+      services: 
+        - name: phpmyadmin-1664375421
+          port: 80 
+
