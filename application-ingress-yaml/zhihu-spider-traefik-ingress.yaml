@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zhihu-spider-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: zhihu-spider.momokanshu.com 
+      http:
+        paths:
+          - backend:
+              service:
+                name: zhihu-spider
+                port: 
+                  number: 8080 
+            path: /
+            pathType: Prefix

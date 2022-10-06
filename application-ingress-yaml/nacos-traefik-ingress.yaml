@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nacos-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: nacos.momokanshu.com 
+      http:
+        paths:
+          - backend:
+              service:
+                name: nacos-headless
+                port: 
+                  number: 8848
+            path: /
+            pathType: Prefix

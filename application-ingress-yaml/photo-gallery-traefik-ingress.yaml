@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: photo-gallery-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: photo-gallery.momokanshu.com 
+      http:
+        paths:
+          - backend:
+              service:
+                name: photo-gallery
+                port: 
+                  number: 8080 
+            path: /
+            pathType: Prefix
